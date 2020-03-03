@@ -17,10 +17,14 @@ public class Progam {
 		Seller seller = sellerDao.findById(3);
 		System.out.println(seller);
 		
-		System.out.println("-------------- TEST 1: Seller -> findByDepartment() ---------------");
+		System.out.println("-------------- TEST 2: Seller -> findByDepartment() ---------------");
 		Department department = new Department(2, "");
-		List<Seller> listSeller = sellerDao.findByDepartment(department);
-		listSeller.forEach(System.out::println);
+		List<Seller> listByDepartment = sellerDao.findByDepartment(department);
+		listByDepartment.forEach(System.out::println);
+		
+		System.out.println("-------------- TEST 3: Seller -> findAll() ---------------");
+		List<Seller> listAll = sellerDao.findAll();
+		listAll.forEach(System.out::println);
 	}	
 
 }
