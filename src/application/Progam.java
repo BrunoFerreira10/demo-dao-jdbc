@@ -1,6 +1,5 @@
 package application;
 
-import java.util.Date;
 import java.util.List;
 
 import model.dao.DaoFactory;
@@ -27,7 +26,7 @@ public class Progam {
 		List<Seller> listAll = sellerDao.findAll();
 		listAll.forEach(System.out::println);
 		
-		System.out.println("-------------- TEST 4: Seller -> insert() ---------------");
+		/*System.out.println("-------------- TEST 4: Seller -> insert() ---------------");
 		seller = new Seller();
 		seller.setName("Greg");
 		seller.setEmail("greg@gmail.com");
@@ -37,7 +36,13 @@ public class Progam {
 		sellerDao.insert(seller);
 		
 		if(seller.getId() != null)
-			System.out.println("Inserted! New id = " + seller.getId());
+			System.out.println("Inserted! New id = " + seller.getId());*/
+		
+		System.out.println("-------------- TEST 5: Seller -> update() ---------------");
+		seller = sellerDao.findById(1);
+		seller.setName("Bruce Waine");
+		sellerDao.update(seller);
+		System.out.println("Updated!");
 	}	
 
 }
