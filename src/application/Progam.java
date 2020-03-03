@@ -13,20 +13,20 @@ public class Progam {
 		
 		SellerDao sellerDao = DaoFactory.createSellerDao();
 		
-		System.out.println("-------------- TEST 1: Seller -> findById() ---------------");
+		System.out.println("\\n-------------- TEST 1: Seller -> findById() ---------------");
 		Seller seller = sellerDao.findById(3);
 		System.out.println(seller);
 		
-		System.out.println("-------------- TEST 2: Seller -> findByDepartment() ---------------");
+		System.out.println("\\n-------------- TEST 2: Seller -> findByDepartment() ---------------");
 		Department department = new Department(2, "");
 		List<Seller> listByDepartment = sellerDao.findByDepartment(department);
 		listByDepartment.forEach(System.out::println);
 		
-		System.out.println("-------------- TEST 3: Seller -> findAll() ---------------");
+		System.out.println("\\n-------------- TEST 3: Seller -> findAll() ---------------");
 		List<Seller> listAll = sellerDao.findAll();
 		listAll.forEach(System.out::println);
 		
-		/*System.out.println("-------------- TEST 4: Seller -> insert() ---------------");
+		/*System.out.println("\n-------------- TEST 4: Seller -> insert() ---------------");
 		seller = new Seller();
 		seller.setName("Greg");
 		seller.setEmail("greg@gmail.com");
@@ -38,11 +38,19 @@ public class Progam {
 		if(seller.getId() != null)
 			System.out.println("Inserted! New id = " + seller.getId());*/
 		
-		System.out.println("-------------- TEST 5: Seller -> update() ---------------");
+		/*System.out.println("\n-------------- TEST 5: Seller -> update() ---------------");
 		seller = sellerDao.findById(1);
 		seller.setName("Bruce Waine");
 		sellerDao.update(seller);
-		System.out.println("Updated!");
+		System.out.println("Updated!");*/
+		
+		System.out.println("\n-------------- TEST 6: Seller -> delete() ---------------");
+		sellerDao.deleteById(20);
+		System.out.println("Deleted!");
+		
+		System.out.println("\\n-------------- TEST 3 - repeat: Seller -> findAll() ---------------");
+		listAll = sellerDao.findAll();
+		listAll.forEach(System.out::println);
 	}	
 
 }
